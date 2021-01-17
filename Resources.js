@@ -9,7 +9,7 @@ class ResourceManager {
             let fileName = srcSet + "/" + _ + ".png"
             let img = new Image()
             img.src = fileName
-            set.push(img)
+            img.onloadeddata = () => set.push(img)
         });
 
         ResourceManager.objects[name] = set
